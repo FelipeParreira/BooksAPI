@@ -2,6 +2,9 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
+// database functions
+const { postBook, getBookById, getBooks } = require('./database/controller.js');
+
 // define port number
 const port = process.env.PORT || 3000;
 
@@ -11,20 +14,21 @@ const app = express();
 
 // middleware
 app.use(morgan('combined'));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// routes
+// ROUTES
 
 // post a new book
 app.post('/book', (req, res) => {
-  console.log('inside post route!');
-  console.log('BODY', req.body);
-  res.send('inside post route...');
+  const data = req.body;
+  postBook(data, res);
 });
 
 // get a book
 app.get('/book/:id', (req, res) => {
-  
+    const { params: { id } } = req;
+    getBookById(id, res);
 });
 
 // get kotlin books
