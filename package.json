@@ -11,8 +11,10 @@
   "author": "Felipe Parreira",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "google-books-search": "^0.3.1",
     "mongoose": "^5.4.19",
     "morgan": "^1.9.1"
   }

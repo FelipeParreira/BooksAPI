@@ -17,7 +17,9 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// ROUTES
+ /* 
+  ******* ROUTES *******
+  */
 
 // post a new book
 app.post('/book', (req, res) => {
@@ -31,9 +33,10 @@ app.get('/book/:id', (req, res) => {
     getBookById(id, res);
 });
 
-// get kotlin books
+// get kotlin (default) books
 app.get('/books', (req, res) => {
-
+  const query = req.body.query || 'kotlin';
+  getBooks(query, res);
 });
 
 // listening on port

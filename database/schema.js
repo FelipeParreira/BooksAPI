@@ -10,15 +10,6 @@ const bookSchema = new Schema({
   language: String
 }, { versionKey: false });
 
-bookSchema.method('transform', function() {
-  let obj = this.toObject();
-
-  obj.id = obj._id;
-  delete obj._id;
-
-  return obj;
-});
-
 const Book = model('BookStorage', bookSchema);
 
 module.exports = Book;
