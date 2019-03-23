@@ -54,3 +54,5 @@ This is a simple API/back-end app built with NodeJS (using ExpressJS) and MongoD
   4. In a new terminal tab, run `npm start`;
   5. You can test the API with Postman (the defaut port is `3000`);
   6. Have fun!
+
+  ** After running the app, the tests can be run with the command `npm test`.
