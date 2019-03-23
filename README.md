@@ -4,8 +4,8 @@ This is a simple API/back-end app built with NodeJS (using ExpressJS) and MongoD
 
 ## Endpoints
 1. POST `/book`
-  * Adds a book to the database;
-  * Body (request):
+   * Adds a book to the database;
+   * Body (request):
     ```
       {
         "title": "Book title example",
@@ -15,46 +15,46 @@ This is a simple API/back-end app built with NodeJS (using ExpressJS) and MongoD
       }
     ```
 2. GET `/book/:id`
-    * Queries for a book by its id;
-    * Body (response):
-    ```
-  {
-          "_id": "1234",
-          "title": "Book title example",
-          "description": "Book description example",
-          "isbn": "9781617293290",
-          "language": "BR"
-}
-    ```
+   * Queries for a book by its id;
+   * Body (response):
+     ```
+     {
+       "_id": "1234",
+       "title": "Book title example",
+       "description": "Book description example",
+       "isbn": "9781617293290",
+       "language": "BR"
+     }
+     ```
 3. GET `/books`
-  * Search books using the Google Books API;
-  * Returns, at most, 24 results;
-  * The body of the request can have a `query` property; if it is not specified, it searches "kotlin" by default;
-  * Body (response):
+   * Search books using the Google Books API;
+   * Returns, at most, 24 results;
+   * The body of the request can have a `query` property; if it is not specified, it searches "kotlin" by default;
+   * Body (response):
   ```
-  {
-        "numberBooks": 24,
-        "books": [
-        {
-          "id": "1234",
-          "title": "Book title example",
-          "description": "Book description example",
-          "isbn": [
-                {
-                    "type": "ISBN_13",
-                    "identifier": "9781789619645"
-                },
-                {
-                    "type": "ISBN_10",
-                    "identifier": "1789619645"
-                }
-            ],
-          "language": "en"
-        },
-        {"..."},
-        {"..."}]
-  }
-  ```
+   {
+         "numberBooks": 24,
+         "books": [
+         {
+           "id": "1234",
+           "title": "Book title example",
+           "description": "Book description example",
+           "isbn": [
+                 {
+                     "type": "ISBN_13",
+                     "identifier": "9781789619645"
+                 },
+                 {
+                     "type": "ISBN_10",
+                     "identifier": "1789619645"
+                 }
+             ],
+           "language": "en"
+         },
+         {"..."},
+         {"..."}]
+   }
+   ```
 
   ## Running the app
   1. Clone or download the repo;
