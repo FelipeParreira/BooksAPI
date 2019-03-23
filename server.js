@@ -35,7 +35,7 @@ app.get('/book/:id', (req, res) => {
 
 // get kotlin (default) books
 app.get('/books', (req, res) => {
-  const query = req.body.query || 'kotlin';
+  const query = req.query.keyWord || 'kotlin';
   getBooks(query, res);
 });
 

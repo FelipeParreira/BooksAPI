@@ -9,7 +9,7 @@ const postBook = (data, res) => {
   Book.findOneAndUpdate({ title }, data, { upsert: true })
    .then(book => {
       res.status(201);
-      res.send('Book inserted succesfully!');
+      res.json(book);
    })
    .catch(err => {
       res.status(400);
@@ -21,7 +21,7 @@ const getBookById = (id, res) => {
   Book.findById(id)
     .then(book => {
       res.status(200);
-      res.send(book);
+      res.json(book);
     })
     .catch(err => {
       res.status(404);
@@ -48,7 +48,7 @@ const getBooks = (query, res) => {
       const results = { numberBooks: books.length, books };
 
       res.status(200);
-      res.send(results);
+      res.json(results);
     })
     .catch(err => {
       res.status(404);
