@@ -8,12 +8,11 @@ const { postBook, getBookById, getBooks } = require('./database/controller.js');
 // define port number
 const port = process.env.PORT || 3000;
 
-
 // initialize server
 const app = express();
 
 // middleware
-app.use(morgan('combined'));
+app.use(morgan('tiny'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -28,9 +27,9 @@ app.post('/book', (req, res) => {
 });
 
 // get a book
-app.get('/book/:id', (req, res) => {
-    const { params: { id } } = req;
-    getBookById(id, res);
+app.get('/book/:bookId', (req, res) => {
+    const { params: { bookId } } = req;
+    getBookById(bookId, res);
 });
 
 // get kotlin (default) books

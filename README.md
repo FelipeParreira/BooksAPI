@@ -26,7 +26,7 @@ This is a simple API/back-end app built with NodeJS (using ExpressJS) and MongoD
          "language": "BR"
         }
      ```
-3. GET `/books`
+3. GET `/books?keyWord=[...]`
    * Search books using the Google Books API;
    * Returns, at most, 24 results;
    * The body of the request can have a `query` property; if it is not specified, it searches "kotlin" by default;
