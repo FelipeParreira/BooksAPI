@@ -39,9 +39,6 @@ const options = {
 const getBooks = (query, res) => {
   books.searchAsync(query, options)
     .then(books => {
-      // , : [{ identifier: isbn }]
-      // : [{ isbn }]
-      console.log(books[0].industryIdentifiers[0].identifier);
       books = books.map(({ id, language, title, description, industryIdentifiers }) => ({ id, title, description, language, isbn: industryIdentifiers }));
 
       const results = { numberBooks: books.length, books };
