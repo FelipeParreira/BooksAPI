@@ -14,7 +14,7 @@ This is a simple API/back-end app built with NodeJS (using ExpressJS) and MongoD
         "language": "BR"
       }
      ```
-2. GET `/book/:id`
+2. GET `/book/:bookId`
    * Queries for a book by its id;
    * Body (response):
      ```
