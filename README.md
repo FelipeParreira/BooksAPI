@@ -39,16 +39,7 @@ This is a simple API/back-end app built with NodeJS (using ExpressJS) and MongoD
                "id": "1234",
                "title": "Book title example",
                "description": "Book description example",
-               "isbn": [
-                     {
-                         "type": "ISBN_13",
-                         "identifier": "9781789619645"
-                     },
-                     {
-                         "type": "ISBN_10",
-                         "identifier": "1789619645"
-                     }
-                 ],
+               "isbn": "9780134854229",
                "language": "en"
              },
              {"..."},
